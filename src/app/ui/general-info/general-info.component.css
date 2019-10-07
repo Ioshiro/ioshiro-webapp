@@ -1,0 +1,19 @@
+.general-info {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex: auto;
+    z-index: 10;
+}
+
+.circle__svg {
+    transition: fill 300ms linear;
+    will-change: fill;
+}
+
+.circle__svg:hover{
+    fill: black;
+}
+
+line {stroke:rgb(0, 0, 0); stroke-width: 2}

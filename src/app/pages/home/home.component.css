@@ -1,0 +1,16 @@
+.main__container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 90vh;
+    position: relative;
+    z-index: 99;
+    background: black;
+  }
+#test__button {
+    size: 10rem;
+    position: absolute;
+    top: 0rem;
+    left: 0rem;
+}

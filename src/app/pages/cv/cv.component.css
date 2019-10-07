@@ -1,0 +1,146 @@
+/*
+  ================
+      PALETTE
+  ================
+  MUTED AND MINIMAL:
+       DUSTY
+      #96858F
+      LAVENDAR
+      #6D7993
+      OVERCAST
+      #9099A2
+       PAPER
+      #D5D5D5
+  UNEXPECTED COLOR 
+   COMBINATIONS:
+       VIOLET
+      #6E3667
+   ELECTRIC LIME
+      #88D317
+     DEEP PLUM
+      #1A0315
+       SHADOW
+      #535353
+  ================
+  */
+
+.cv__list{
+    display: flex;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    flex-flow: row;
+    flex: 1;
+    justify-content: center;
+    justify-items: center;
+    height: 80vh;
+    width: 90vw;
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 255, 0.2);
+    margin: auto;
+}
+
+/*
+    GENERAL INFO
+*/
+
+.cv-general__container{
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1;
+    background: #6D7993;
+    transition: flex 300ms linear;
+    will-change: flex;
+    z-index: 0;
+}
+
+.cv-general__container-active{
+    flex: 20;
+    align-items: stretch;
+    z-index: 1;
+}
+
+.general-info__container{
+    flex: 1;
+    width: 100%;
+    align-items: center;
+
+}
+
+
+/*
+    SCHOOL INFO
+*/
+
+.cv-school__container{
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1;
+    transform: none;
+    background: #9099A2;
+    transition: flex 300ms linear;
+    will-change: flex;
+    z-index: 0;
+}
+
+.cv-school__container-active{
+    flex: 20;
+    z-index: 1;
+}
+
+/*
+    GAMES INFO
+*/
+
+.cv-games__container{
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1;
+    transform: none;
+    background: #96858F;
+    transition: flex 300ms linear;
+    will-change: flex;
+    z-index: 0;
+}
+
+.cv-games__container-active{
+    flex: 20;
+    z-index: 1;
+}
+
+/*
+         SVGS
+*/
+
+.general__svg{
+    flex: 1;
+    height: 50%;
+    width: 50%;
+    align-self: center;
+    transition: transform 200ms linear;
+    will-change: transform;
+}
+
+.general__svg-active{
+    transform: scale(0.3);
+}
+
+.school__svg{
+    flex: 1;
+    height: 50%;
+    width: 50%;
+    transition: flex 300ms linear;
+    will-change: flex;
+}
+
+.games__svg{
+    flex: 1;
+    height: 50%;
+    width: 50%;
+    transition: flex 300ms linear;
+    will-change: flex;
+}
