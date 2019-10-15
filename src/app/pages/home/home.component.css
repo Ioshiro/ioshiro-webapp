@@ -3,11 +3,13 @@
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    min-height: 90vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    min-height: 50vh;
+    min-width: 50vw;
     position: relative;
-    z-index: 99;
-    background: black;
-  }
+    z-index: 1;
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 255, 0.2);
+   }
 #test__button {
     size: 10rem;
     position: absolute;

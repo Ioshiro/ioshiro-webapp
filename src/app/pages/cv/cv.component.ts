@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {UiService} from '../../services/ui/ui.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-cv',
@@ -8,9 +9,11 @@ import {UiService} from '../../services/ui/ui.service';
 })
 export class CvComponent implements OnInit {
   title = "About Me";
+  darkModeActive : boolean;
   showGeneral = false;
   showSchool = false;
   showGames = false;
+  sub1: Subscription;
 
   toggleGeneral(){
     if(this.showGeneral)
@@ -44,11 +47,26 @@ export class CvComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.ui.setTitle(this.title);
+    this.ui.title.next(this.title);
+    this.sub1 = this.ui.darkModeState.subscribe((value) => {
+      this.darkModeActive = value;
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.sub1.unsubscribe();
   }
 
   moveOminoTo(newX, newY){
     document.getElementById("omino").setAttribute("transform", "translateX(50%)");
   }
+
+  moveSection(idStr, xOffset, yOffset) {
+    var domElemnt = document.getElementById(idStr);
+        if (domElemnt) {
+            var transformAttr = ' translate(' + xOffset + ',' + yOffset + ')';
+            domElemnt.setAttribute('transform', transformAttr);
+        }
+    }
 
 }

@@ -40,11 +40,23 @@ export class GeneralInfoComponent implements OnInit {
 
   moveOminoTo(num){
     switch (num) {
+      case 0:
+       this.cv.moveSection("omino",0,0);
+       break;
       case 1:
-        this.cv.moveOminoTo(1,2);
+        this.cv.moveSection("omino",-1000,500);
         break;
-    
+      case 2:
+        this.cv.moveSection("omino",-500,900);
+        break;
+      case 3:
+        this.cv.moveSection("omino",-800,-400);
+        break;
+      case 4:
+        this.cv.moveSection("omino",-1200,-200);
+        break;
       default:
+        this.cv.moveSection("omino",0,0);
         break;
     }
   }

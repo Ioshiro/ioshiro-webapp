@@ -36,6 +36,13 @@
     width: 90vw;
     box-shadow: 0 0.5rem 2rem rgba(0, 0, 255, 0.2);
     margin: auto;
+    transition: color fill 300ms linear;
+    will-change: color fill;
+}
+
+.cv__list-dark{
+    color: white;
+    fill: white;
 }
 
 /*
@@ -48,9 +55,10 @@
     justify-content: flex-start;
     align-items: center;
     flex: 1;
-    background: #6D7993;
-    transition: flex 300ms linear;
-    will-change: flex;
+    background-color: #6D7993;
+    transition: flex 300ms linear, background-color 300ms linear;
+    will-change: flex, background-color;
+    animation: 1s ease-in-out 0ms 1 fadein;
     z-index: 0;
 }
 
@@ -58,6 +66,20 @@
     flex: 20;
     align-items: stretch;
     z-index: 1;
+}
+
+.cv-general__container-dark{
+    background-color: #1A0315;
+}
+
+.cv-general-map__container{
+    flex: 2;
+    display: flex;
+    flex-flow: row;
+    justify-items: center;
+    align-items: center;
+    max-height: 10rem;
+    max-width: 100%;
 }
 
 .general-info__container{
@@ -79,15 +101,20 @@
     align-items: center;
     flex: 1;
     transform: none;
-    background: #9099A2;
-    transition: flex 300ms linear;
-    will-change: flex;
+    background-color: #9099A2;
+    transition: flex 300ms linear, background-color 300ms linear;
+    will-change: flex, background-color;
+    animation: 1s ease-in-out 0ms 1 fadein;
     z-index: 0;
 }
 
 .cv-school__container-active{
     flex: 20;
     z-index: 1;
+}
+
+.cv-school__container-dark{
+    background-color: #535353;
 }
 
 /*
@@ -101,15 +128,20 @@
     align-items: center;
     flex: 1;
     transform: none;
-    background: #96858F;
-    transition: flex 300ms linear;
-    will-change: flex;
+    background-color: #96858F;
+    transition: flex 300ms linear, background-color 300ms linear;
+    will-change: flex, background-color;
+    animation: 1s ease-in-out 0ms 1 fadein;
     z-index: 0;
 }
 
 .cv-games__container-active{
     flex: 20;
     z-index: 1;
+}
+
+.cv-games__container-dark{
+    background-color: #6E3667;
 }
 
 /*
@@ -121,14 +153,30 @@
     height: 50%;
     width: 50%;
     align-self: center;
-    transition: transform 200ms linear;
+    transition: scale 200ms linear;
     will-change: transform;
+    z-index: 6;
 }
 
 .general__svg-active{
     transform: scale(0.3);
 }
 
+.italy-map__svg{
+    max-width: 100%;
+    max-height: inherit;
+    display: block;
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 255, 0.2);
+    margin: auto;
+}
+
+.russia-map__svg{
+    max-width: 100%;
+    max-height: inherit;
+    display: block;
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 255, 0.2);
+    margin: auto;  
+}
 .school__svg{
     flex: 1;
     height: 50%;
@@ -137,10 +185,18 @@
     will-change: flex;
 }
 
+.school__svg-active{
+    transform: scale(0.3);
+}
+
 .games__svg{
     flex: 1;
     height: 50%;
     width: 50%;
     transition: flex 300ms linear;
     will-change: flex;
+}
+
+.games__svg-active{
+    transform: scale(0.3);
 }

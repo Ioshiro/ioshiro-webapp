@@ -36,8 +36,10 @@
     align-items: center;
     justify-content: space-between;
     flex-flow: column;
-    transition: background 300ms linear;
-    background: #D5D5D5;
+    transition: background-color 500ms linear;
+    will-change: background-color;
+    animation: 1s ease-in-out 300ms 1 fadein;
+    background-color: #D5D5D5;
   }
 
   .root__container-dark {

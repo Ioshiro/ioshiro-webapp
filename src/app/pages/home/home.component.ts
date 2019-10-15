@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   constructor(public ui: UiService) { }
 
   ngOnInit() {
-    this.ui.setTitle(this.title);
+    this.ui.title.next(this.title);
     console.log("setto: "+ this.title);
   }
 

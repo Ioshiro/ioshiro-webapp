@@ -6,17 +6,11 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class UiService {
   title: BehaviorSubject<string>;
+  darkModeState: BehaviorSubject<boolean>;
+
   constructor() { 
     this.title = new BehaviorSubject<string>("blank");
+    this.darkModeState = new BehaviorSubject<boolean>(false);
   }
 
-  getTitle(){
-    return this.title;
-  }
-
-  setTitle(newTitle){
-    this.title.next(newTitle);
-    console.log(this.title.getValue());
-    console.log("passato: "+ newTitle);
-  }
 }
