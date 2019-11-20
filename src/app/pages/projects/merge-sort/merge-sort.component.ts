@@ -13,6 +13,7 @@ export class MergeSortComponent implements OnInit {
   pixelsArray: Array<ColoredPixel>;
   workArray : Array<number>;
   gradientArray: Array<string>;
+  len : number;
   constructor() { }
 
   ngOnInit() {
