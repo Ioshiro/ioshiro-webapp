@@ -1,0 +1,32 @@
+.merge-sort__container{
+    display: flex;
+    flex-flow: column;
+    justify-items: center;
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 255, 0.2);
+}
+
+.array__container{
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    height: 70vh;
+    width: 60vw;
+    word-wrap: break-word;
+    overflow: scroll;
+    will-change: order;
+    align-items: stretch;
+    text-align: center;
+}
+
+.coloredPixels{
+    font-family: 'Courier New', Courier, monospace;
+    will-change: order;
+    transition: order 100ms linear;
+}
+
+.button__container{
+    height: 10vh;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+}

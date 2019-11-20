@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, style, animate, transition } from '@angular/animations';
-import { CvComponent } from '../../pages/cv/cv.component';
+import { CvComponent } from '../../../pages/cv/cv.component';
+import { UiService } from '../../../services/ui/ui.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-general-info',
@@ -23,7 +25,9 @@ import { CvComponent } from '../../pages/cv/cv.component';
 })
 export class GeneralInfoComponent implements OnInit {
   showGeneral = false;
-  constructor(public cv: CvComponent) { 
+  circleActive : number;
+  sub1 : Subscription;
+  constructor(public cv: CvComponent, public ui: UiService) { 
 
   }
 
@@ -32,10 +36,14 @@ export class GeneralInfoComponent implements OnInit {
   }
   ngOnInit() {
     this.showGeneral = this.cv.showGeneral;
+    this.sub1 = this.ui.circleActiveNumber.subscribe((value) => {
+      this.circleActive = value;
+    });
   }
 
   ngOnDestroy(): void {
     this.showGeneral = false;
+    this.sub1.unsubscribe();
   }
 
   moveOminoTo(num){

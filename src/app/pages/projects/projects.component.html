@@ -1,1 +1,23 @@
-<div class="projects__container">testetest</div>
+<div class="projects__container">
+        <div class="projects__list">
+            Select a component:
+            <div class="algorithms__container" (click)="this.showAlgorithms = !this.showAlgorithms">
+                Algorithms
+                <ul class="algorithms__list" *ngIf="showAlgorithms">
+                    <li class="merge-sort__container" [routerLink]="[{outlets: {projectBox: ['merge-sort']}}]"
+                    routerLinkActive="router-link-active"  >merge-sort</li>
+                </ul>
+            </div>
+            <div class="other__container" (click)="this.showOther = !this.showOther">
+                Other stuff
+                <ul class="other__list" *ngIf="showOther">
+                    <li class="test1">test1</li>
+                    <li class="test2">test2</li>
+                    <li class="test3">test3</li>
+                </ul>
+            </div>
+        </div>
+        <router-outlet name="projectBox" class="projectBox"></router-outlet>
+        
+    </div>
+    

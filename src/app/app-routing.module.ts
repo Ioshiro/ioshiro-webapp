@@ -8,7 +8,7 @@ import { ProjectsComponent } from './pages/projects/projects.component';
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'cv', component: CvComponent},
-  {path: 'projects', component: ProjectsComponent},
+  {path: 'projects', component: ProjectsComponent, loadChildren: './pages/projects/projects.module#ProjectsModule'},
   {path: '**', redirectTo: ''} 
 ];
 

@@ -11,12 +11,23 @@
       #9099A2
        PAPER
       #D5D5D5
+
+  MUTED AND MINIMAL (20% DARKER):
+    DARK DUSTY
+      #63535D
+    DARK LAVENDAR
+      #3C4960
+    DARK OVERCAST
+      #5E666E
+    DARK PAPER
+      #9E9E9E
+
   UNEXPECTED COLOR 
    COMBINATIONS:
        VIOLET
       #6E3667
    ELECTRIC LIME
-      #88D317
+      #5E666E
      DEEP PLUM
       #1A0315
        SHADOW
@@ -44,7 +55,8 @@
 
   .root__container-dark {
     /*background: linear-gradient(to top, #30cfd0 0%, #330867 100%);*/
-    background: linear-gradient(to bottom, #6E3667, #1A0315);
+    background: linear-gradient(to bottom, #3C4960, #63535D);
+    color: #d5d5d5;
   }
   
   /* 100vw, 100vh
@@ -115,7 +127,7 @@
   }
 
   .slide-menu-dark {
-    background-color: #1A0315;
+    background-color: #3C4960;
   }
   
   .menu-header {
@@ -131,7 +143,7 @@
   }
 
   .menu-header-dark {
-    background: linear-gradient(to right, #6E3667, #1A0315);
+    background: linear-gradient(to right, #63535D, #3C4960);
     box-shadow: 0 0.5rem 2rem #535353;
   }
   
@@ -147,7 +159,7 @@
   }
 
   .greeting__text-dark {
-    color: #88D317;
+    color: #5E666E;
   }
   
   .account-details {
@@ -165,7 +177,7 @@
   }
 
   .name__text-dark {
-    color: #88D317;
+    color: #5E666E;
   }
   
   .email__text {
@@ -175,7 +187,7 @@
   }
 
   .email__text-dark {
-    color: #88D317;
+    color: #5E666E;
   }
   
   .menu-body {
@@ -198,8 +210,8 @@
   }
   
   .link-active-dark {
-    color: #88D317;
-    border-bottom: 1px solid #88D317;
+    color: #63535D;
+    border-bottom: 1px solid #63535D;
   }
   .menu-link {
     outline: none;
@@ -242,7 +254,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 0.25fr;
     grid-template-rows: 1fr;
-    box-shadow: 0 0 2rem #6D7993;
+    box-shadow: 0 0 2rem #63535D;
     background-color: #D5D5D5;
     height: 4rem;
     margin: 0;
@@ -252,8 +264,8 @@
   }
   
   .main__header-dark {
-    background-color: #1A0315;
-    color: #88D317;
+    background-color: #63535D;
+    color: #d5d5d5;
   }
   
   .toggle-button__container {
@@ -279,7 +291,7 @@
   .mode-toggle__circle {
     height: 1.30rem;
     width: 1.30rem;
-    background-color: #1A0315;
+    background-color: #3C4960;
     position: absolute;
     top: -0.18rem;
     border-radius: 50%;
@@ -336,13 +348,13 @@
   }
 
   .logo__path1-dark {
-    fill: #6E3667;
+    fill: #5E666E;
     transition: fill 500ms linear;
     animation: 1s ease-in-out 0ms 1 fadein;
   }
   
   .logo__path2-dark {
-    fill: #88D317;
+    fill: #5E666E;
     transition: fill 500ms linear;
     animation: 1s ease-in-out 0ms 1 fadein;
   }
@@ -352,7 +364,7 @@
   }
   
   .logo__text-dark {
-    fill: #88D317;
+    fill: #5E666E;
   }
   
   .hamburger__icon__fill {
@@ -386,7 +398,7 @@
   }
 
   .copyright__text-dark {
-    color: #535353;
+    color: #63535D;
   }
   
   /*

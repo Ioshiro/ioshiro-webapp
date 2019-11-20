@@ -1,0 +1,39 @@
+.projects__container{
+    display: flex;
+    flex-flow: row;
+    height: 80vh;
+    width: 90vw;
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 255, 0.2);
+}
+
+.projects__list{
+    display: flex;
+    flex-flow: column;
+    width: 30vw;
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 255, 0.2);
+}
+.algorithms__container{
+    display: flex;
+    flex-flow: column;
+    margin-left: 3rem;
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 255, 0.2);
+}
+
+.algorithms__list{
+    display: flex;
+    flex-flow: column;
+    margin-left: 3rem;
+}
+
+.other__container{
+    display: flex;
+    flex-flow: column;
+    margin-left: 3rem;
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 255, 0.2);
+}
+
+.other__list{
+    display: flex;
+    flex-flow: column;
+    margin-left: 3rem;
+}

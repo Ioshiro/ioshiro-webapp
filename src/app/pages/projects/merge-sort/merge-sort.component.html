@@ -1,0 +1,8 @@
+<div class="merge-sort__container">
+    <div class="array__container" id="dynamicArray" [style.font-size.rem] = "2.5">  </div>
+    <div class="button__container">
+        <input type="number" [(ngModel)]="len">
+        <input type="button" value="Create random array" (click)="createArray(len)">
+        <input type="button" value="Order array" (click)="mergeSort(len)">
+    </div>
+</div>

@@ -89,6 +89,14 @@
 
 }
 
+.cv-general-map__container{
+    display:flex;
+    flex-flow: row;
+    justify-items: flex-start;
+    align-items: center;
+    
+}
+
 
 /*
     SCHOOL INFO
@@ -162,13 +170,46 @@
     transform: scale(0.3);
 }
 
-.italy-map__svg{
-    max-width: 100%;
-    max-height: inherit;
-    display: block;
+.general__svg:hover {
+    filter: url(#pictureFilter);
+  }
+
+.italy-map__svg{ 
+    height: 100%;
+    width: 80%;
     box-shadow: 0 0.5rem 2rem rgba(0, 0, 255, 0.2);
-    margin: auto;
+    z-index: 0;
 }
+
+.italy-map__svg *{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#IT-34{
+    will-change: fill;
+    transition: fill 500ms linear;
+}
+#IT-36{
+    will-change: fill;
+    transition: fill 500ms linear;
+}
+#IT-32{
+    will-change: fill;
+    transition: fill 500ms linear;
+}
+.italy-map-tn__svg-active{
+    fill: #96858F;
+}
+
+.italy-map-ve__svg-active{
+    fill: #96858F;
+}
+
+.italy-map-fr__svg-active{
+    fill: #96858F;
+}
+
 
 .russia-map__svg{
     max-width: 100%;

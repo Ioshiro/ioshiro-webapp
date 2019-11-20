@@ -8,11 +8,14 @@ import {UiService} from '../../services/ui/ui.service';
 })
 export class ProjectsComponent implements OnInit {
   title = "Projects & Stuff";
+  showAlgorithms = false;
+  showOther = false;
 
   constructor(public ui: UiService) { }
 
   ngOnInit() {
     this.ui.title.next(this.title);
   }
+
 
 }
