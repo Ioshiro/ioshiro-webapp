@@ -9,6 +9,7 @@ import { ComponentTestComponent } from './pages/component-test/component-test.co
 import { CvComponent } from './pages/cv/cv.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { GeneralInfoComponent } from './ui/cv/general-info/general-info.component';
+import { AlgorithmViewComponent } from './pages/projects/algorithm-view/algorithm-view.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { GeneralInfoComponent } from './ui/cv/general-info/general-info.componen
     CvComponent,
     ProjectsComponent,
     GeneralInfoComponent,
+    AlgorithmViewComponent,
   ],
   imports: [
     BrowserModule,

@@ -15,6 +15,7 @@
     overflow: scroll;
     will-change: order;
     align-items: stretch;
+    align-content: stretch;
     text-align: center;
 }
 

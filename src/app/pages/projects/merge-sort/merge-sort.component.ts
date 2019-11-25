@@ -19,43 +19,6 @@ export class MergeSortComponent implements OnInit {
   ngOnInit() {
   }
   
-  createArray(len: number){
-    if(this.pixelsArray != undefined){
-      this.pixelsArray.forEach((v:ColoredPixel, i:number) =>{
-        document.getElementById(v.id.toString()).remove();
-      });
-    }
-    this.activeArray = Array.from({length: len}, () => Math.floor(Math.random() * (len*3)));
-    this.activeLength = len;
-    console.log("[createArray]created array of len "+len+" and values:" +this.activeArray);
-    this.pixelsArray = new Array();
-    this.gradientArray = this.gradient("#96858f","#6d7993",this.activeLength);
-    this.activeArray.forEach((v: number, i: number) =>{
-      this.addColoredPixel(v,i, this.gradientArray[Math.floor(v/3)]);
-      this.appendColoredPixel(this.pixelsArray[i]);});
-  }
-
-  addColoredPixel(element: number, index: number, col: string){
-    //console.log("[addColoredPixel] Passin elem: "+element+" at index: "+index);
-    let newPixel = new ColoredPixel(index, element, 5, col);
-    let newLen = this.pixelsArray.push(newPixel);
-  }
-
-  appendColoredPixel(newPixel: ColoredPixel){
-    var newElement = document.createElement('div');
-    newElement.id = newPixel.id.toString();
-    newElement.style.order = newPixel.id.toString();
-    newElement.className = 'coloredPixels';
-    newElement.style.backgroundColor = newPixel.color;
-    newElement.style.height = newPixel.size;
-    newElement.style.width = newPixel.size;
-    newElement.innerHTML = newPixel.val.toString();
-    newElement.style.transition = "order 4000ms linear";
-    document.getElementById('dynamicArray').appendChild(newElement);
-  }
-
-
-
   mergeSort(n: number){
    var start = new Date().getTime();
     console.log("[mergeSort]Received array: "+ this.activeArray.toString());
@@ -126,20 +89,48 @@ export class MergeSortComponent implements OnInit {
     //console.log("[topDownMerge] temporary activeArray: ["+A.toString()+"]");   
   }
 
+  // **TODO** array&coloredPixels functions
+
+  createArray(len: number){
+    if(this.pixelsArray != undefined){
+      this.pixelsArray.forEach((v:ColoredPixel, i:number) =>{
+        document.getElementById(v.id.toString()).remove();
+      });
+    }
+    this.activeArray = Array.from({length: len}, () => Math.floor(Math.random() * (len*3)));
+    this.activeLength = len;
+    console.log("[createArray]created array of len "+len+" and values:" +this.activeArray);
+    this.pixelsArray = new Array();
+    this.gradientArray = this.gradient("#96858f","#6d7993",this.activeLength);
+    this.activeArray.forEach((v: number, i: number) =>{
+      this.addColoredPixel(v,i, this.gradientArray[Math.floor(v/3)]);
+      this.appendColoredPixel(this.pixelsArray[i]);});
+  }
+
+  addColoredPixel(element: number, index: number, col: string){
+    //console.log("[addColoredPixel] Passin elem: "+element+" at index: "+index);
+    let newPixel = new ColoredPixel(index, element, 5, col);
+    let newLen = this.pixelsArray.push(newPixel);
+  }
+
+  appendColoredPixel(newPixel: ColoredPixel){
+    var newElement = document.createElement('div');
+    newElement.id = newPixel.id.toString();
+    newElement.style.order = newPixel.id.toString();
+    newElement.className = 'coloredPixels';
+    newElement.style.backgroundColor = newPixel.color;
+    newElement.style.height = newPixel.size;
+    newElement.style.width = newPixel.size;
+    newElement.innerHTML = newPixel.val.toString();
+    newElement.style.transition = "order 4000ms linear";
+    document.getElementById('dynamicArray').appendChild(newElement);
+  }
+
   setOrderByValue(i: number, v: number){
     for(let j in this.pixelsArray){
       let element = document.getElementById(j.toString());
       if(element.innerHTML == v.toString()){
         element.style.order = i.toString();
-      }
-    }
-  }
-
- sleep(milliseconds: number) {
-    var start = new Date().getTime();
-    for (var i = 0; i < 1e7; i++) {
-      if ((new Date().getTime() - start) > milliseconds){
-        break;
       }
     }
   }
