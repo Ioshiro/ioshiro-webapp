@@ -1,5 +1,6 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, OnDestroy} from '@angular/core';
 import { ColoredPixel } from '../colored-pixel';
+import { AlgorithmViewComponent } from '../algorithm-view/algorithm-view.component';
 
 @Component({
   selector: 'projects-merge-sort',
@@ -7,7 +8,7 @@ import { ColoredPixel } from '../colored-pixel';
   styleUrls: ['./merge-sort.component.css']
 })
 
-export class MergeSortComponent implements OnInit {
+export class MergeSortComponent implements OnInit, OnDestroy {
   activeArray : Array<number>;
   activeLength : number;
   pixelsArray: Array<ColoredPixel>;
@@ -18,12 +19,16 @@ export class MergeSortComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  ngOnDestroy() {
+   // AlgorithmViewComponent.flushArray();
+  }
   
   mergeSort(n: number){
    var start = new Date().getTime();
-    console.log("[mergeSort]Received array: "+ this.activeArray.toString());
+    //console.log("[mergeSort]Received array: "+ this.activeArray.toString());
     this.topDownSplitMerge(this.activeArray, 0, n-1);
-    console.log("[mergeSort]Sorted array: "+ this.activeArray.toString());
+    //console.log("[mergeSort]Sorted array: "+ this.activeArray.toString());
     var elapsed = new Date().getTime() - start;
     console.log("[mergeSort]Time elapsed: "+elapsed+"ms");
   }
@@ -84,96 +89,12 @@ export class MergeSortComponent implements OnInit {
     } 
    
     A.forEach((v: number, i:number) => {
-      this.setOrderByValue(i, v);
+      AlgorithmViewComponent.setOrderByValue(i, v);
     });
     //console.log("[topDownMerge] temporary activeArray: ["+A.toString()+"]");   
   }
-
-  // **TODO** array&coloredPixels functions
-
   createArray(len: number){
-    if(this.pixelsArray != undefined){
-      this.pixelsArray.forEach((v:ColoredPixel, i:number) =>{
-        document.getElementById(v.id.toString()).remove();
-      });
-    }
-    this.activeArray = Array.from({length: len}, () => Math.floor(Math.random() * (len*3)));
-    this.activeLength = len;
-    console.log("[createArray]created array of len "+len+" and values:" +this.activeArray);
-    this.pixelsArray = new Array();
-    this.gradientArray = this.gradient("#96858f","#6d7993",this.activeLength);
-    this.activeArray.forEach((v: number, i: number) =>{
-      this.addColoredPixel(v,i, this.gradientArray[Math.floor(v/3)]);
-      this.appendColoredPixel(this.pixelsArray[i]);});
+    this.activeArray = AlgorithmViewComponent.createArray(len);
   }
 
-  addColoredPixel(element: number, index: number, col: string){
-    //console.log("[addColoredPixel] Passin elem: "+element+" at index: "+index);
-    let newPixel = new ColoredPixel(index, element, 5, col);
-    let newLen = this.pixelsArray.push(newPixel);
-  }
-
-  appendColoredPixel(newPixel: ColoredPixel){
-    var newElement = document.createElement('div');
-    newElement.id = newPixel.id.toString();
-    newElement.style.order = newPixel.id.toString();
-    newElement.className = 'coloredPixels';
-    newElement.style.backgroundColor = newPixel.color;
-    newElement.style.height = newPixel.size;
-    newElement.style.width = newPixel.size;
-    newElement.innerHTML = newPixel.val.toString();
-    newElement.style.transition = "order 4000ms linear";
-    document.getElementById('dynamicArray').appendChild(newElement);
-  }
-
-  setOrderByValue(i: number, v: number){
-    for(let j in this.pixelsArray){
-      let element = document.getElementById(j.toString());
-      if(element.innerHTML == v.toString()){
-        element.style.order = i.toString();
-      }
-    }
-  }
-
-  getValues(arr: Array<ColoredPixel>){
-    let text: string;
-    for(let x in arr){
-      text += arr[x].val;
-      text += " ";
-    }
-    return text;
-  }
-
-
-  gradient(startColor:string, endColor:string, steps:number) {
-    var start = {
-            'Hex'   : startColor,
-            'R'     : parseInt(startColor.slice(1,3), 16),
-            'G'     : parseInt(startColor.slice(3,5), 16),
-            'B'     : parseInt(startColor.slice(5,7), 16)
-    }
-    var end = {
-            'Hex'   : endColor,
-            'R'     : parseInt(endColor.slice(1,3), 16),
-            'G'     : parseInt(endColor.slice(3,5), 16),
-            'B'     : parseInt(endColor.slice(5,7), 16)
-    }
-    let diffR = end['R'] - start['R'];
-    let diffG = end['G'] - start['G'];
-    let diffB = end['B'] - start['B'];
-
-    let stepsHex  = new Array();
-    let stepsR    = new Array();
-    let stepsG    = new Array();
-    let stepsB    = new Array();
-
-    for(var i = 0; i <= steps; i++) {
-            stepsR[i] = start['R'] + ((diffR / steps) * i);
-            stepsG[i] = start['G'] + ((diffG / steps) * i);
-            stepsB[i] = start['B'] + ((diffB / steps) * i);
-            stepsHex[i] = '#' + Math.round(stepsR[i]).toString(16) + '' + Math.round(stepsG[i]).toString(16) + '' + Math.round(stepsB[i]).toString(16);
-    }
-    return stepsHex;
-
-}
 }

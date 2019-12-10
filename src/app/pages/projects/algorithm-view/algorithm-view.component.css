@@ -1,0 +1,19 @@
+.array__container{
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    height: 70vh;
+    width: 60vw;
+    word-wrap: break-word;
+    overflow: scroll;
+    will-change: order;
+    align-items: stretch;
+    align-content: stretch;
+    text-align: center;
+}
+
+.coloredPixels{
+    font-family: 'Courier New', Courier, monospace;
+    will-change: order;
+    transition: order 100ms linear;
+}
