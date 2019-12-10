@@ -8,6 +8,7 @@ import { AlgorithmViewComponent } from '../algorithm-view/algorithm-view.compone
 })
 export class InsertionSortComponent implements OnInit {
   activeArray : Array<number>;
+
   constructor() { }
 
   ngOnInit() {
@@ -15,22 +16,22 @@ export class InsertionSortComponent implements OnInit {
 
   insertionSort(n: number){
     var start = new Date().getTime();
-    //console.log("[selectionSort]Received array: "+ this.activeArray.toString());
-    for(let i = 1; i < n; i++){
-      let tmp = this.activeArray[i];
-      let j = i;
-      while(j > 1 && this.activeArray[j-1] > tmp){
-        this.activeArray[j] = this.activeArray[j-1];
-        j = j-1;
+    //console.log("[insertionSort]Received array: "+ this.activeArray.toString());
+      for(let i = 1; i < n; i++){
+        let tmp = this.activeArray[i];
+        let j = i;
+        while(j > 0 && this.activeArray[j-1] > tmp){
+          this.activeArray[j] = this.activeArray[j-1];
+          j = j-1;
+        }
+        this.activeArray[j] = tmp;
+        this.activeArray.forEach((v:number, i:number) => {
+          AlgorithmViewComponent.setOrderByValue(i,v);
+        });
       }
-      this.activeArray[j] = tmp;
-      this.activeArray.forEach((v:number, i:number) => {
-        AlgorithmViewComponent.setOrderByValue(i,v);
-      });
-    }
-    //console.log("[selectionSort]Sorted array: "+ this.activeArray.toString());
+    //console.log("[insertionSort]Sorted array: "+ this.activeArray.toString());
     var elapsed = new Date().getTime() - start;
-    console.log("[selectionSort]Time elapsed: "+elapsed+"ms");
+    console.log("[insertionSort]Time elapsed: "+elapsed+"ms");
    }
 
 

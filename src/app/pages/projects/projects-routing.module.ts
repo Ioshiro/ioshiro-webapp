@@ -4,7 +4,7 @@ import { MergeSortComponent } from "./merge-sort/merge-sort.component";
 import { AlgorithmViewComponent } from './algorithm-view/algorithm-view.component';
 import { SelectionSortComponent } from './selection-sort/selection-sort.component';
 import { InsertionSortComponent } from './insertion-sort/insertion-sort.component';
-
+import { CountingSortComponent } from './counting-sort/counting-sort.component';
 
 
 
@@ -12,7 +12,8 @@ export const ProjectRoutes: Routes = [
   {path: 'merge-sort', component: MergeSortComponent, outlet: "projectBox"},
   {path: 'app-algortihm-view', component: AlgorithmViewComponent},
   {path: 'selection-sort', component: SelectionSortComponent, outlet: "projectBox"},
-  {path: 'insertion-sort', component: InsertionSortComponent, outlet: "projectBox"}
+  {path: 'insertion-sort', component: InsertionSortComponent, outlet: "projectBox"},
+  {path: 'counting-sort', component: CountingSortComponent, outlet: "projectBox"}
 ];
 
 @NgModule({

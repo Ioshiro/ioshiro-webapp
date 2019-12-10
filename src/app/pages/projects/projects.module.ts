@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AlgorithmViewComponent } from './algorithm-view/algorithm-view.component';
 import { InsertionSortComponent } from './insertion-sort/insertion-sort.component';
+import { CountingSortComponent } from './counting-sort/counting-sort.component';
 
 
 
@@ -16,6 +17,7 @@ import { InsertionSortComponent } from './insertion-sort/insertion-sort.componen
         MergeSortComponent,
         SelectionSortComponent,
         InsertionSortComponent,
+        CountingSortComponent,
         AlgorithmViewComponent
     ],
     imports: [

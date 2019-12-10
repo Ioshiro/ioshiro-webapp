@@ -1,0 +1,8 @@
+<div class="counting-sort__container">
+    <app-algorithm-view></app-algorithm-view>
+    <div class="button__container">
+        <input type="number" [(ngModel)]="len">
+        <input type="button" value="Create random array" (click)="createArray(len)">
+        <input type="button" value="Order array" (click)="countingSort(len)">
+    </div>
+</div>
