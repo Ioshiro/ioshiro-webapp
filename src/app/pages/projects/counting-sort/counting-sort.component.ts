@@ -19,12 +19,13 @@ export class CountingSortComponent implements OnInit {
     var start = new Date().getTime();
     console.log("[countingSort]Received array: "+ this.activeArray.toString());
     let i, j, k;
-    this.workArray = Array.from({length: n}, () => 0);
+    this.workArray = Array.from({length: n * 3}, () => 0);
+    //console.log("[countingSort] created array of len: " + this.workArray.length + "and values: " +this.workArray);
     for(j = 0; j < n; j++){
       this.workArray[this.activeArray[j]] = this.workArray[this.activeArray[j]] + 1
     }
     j = 0;
-    for( i = 0; i < n; i++){
+    for( i = 0; i < this.workArray.length; i++){
       while(this.workArray[i] > 0){
         this.activeArray[j] = i;
         j = j+1;
