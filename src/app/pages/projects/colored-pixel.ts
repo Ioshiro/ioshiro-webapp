@@ -6,7 +6,7 @@ export class ColoredPixel {
     constructor(id: number, val: number, siz: number, col: string){
       this.id = id;
       this.val = val;
-      this.color = col;//this.stringToColour(val.toString());
+      this.color = col;
       //console.log("created color:" +this.color);
       this.size = siz.toString() + 'rem';
     }

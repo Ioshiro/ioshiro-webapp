@@ -1,8 +1,19 @@
+.view__container{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.name-text__container{
+    height: 9vh;
+    margin: auto;
+}
+
 .array__container{
     display: flex;
     flex-flow: row;
     flex-wrap: wrap;
-    height: 70vh;
+    height: 62vh;
     width: 60vw;
     word-wrap: break-word;
     overflow: scroll;
@@ -10,6 +21,7 @@
     align-items: stretch;
     align-content: stretch;
     text-align: center;
+    margin: auto;
 }
 
 .coloredPixels{

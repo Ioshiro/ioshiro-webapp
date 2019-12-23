@@ -1,8 +1,8 @@
 <div class="projects__container">
-        <div class="projects__list">
+        <ol class="projects__list">
             <span class="select__text">Select a component:</span>
-            <div class="algorithms__container" (click)="this.showAlgorithms = !this.showAlgorithms">
-                <span class="algorithms__text">Algorithms</span>
+            <li class="algorithms__container" (click)="toggleAlgorithms()">
+                <span class="algorithms__text"><a>Algorithms</a></span>
                 <ul class="algorithms__list" *ngIf="showAlgorithms">
                     <li class="merge-sort__container" [routerLink]="[{outlets: {projectBox: ['merge-sort']}}]"
                     routerLinkActive="router-link-active"><a>merge-sort</a></li>
@@ -13,16 +13,16 @@
                     <li class="counting-sort__container" [routerLink]="[{outlets: {projectBox: ['counting-sort']}}]" 
                     routerLinkActive="router-link-active"><a>counting-sort</a></li>
                 </ul>
-            </div>
-            <div class="other__container" (click)="this.showOther = !this.showOther">
-                Other stuff
+            </li>
+            <li class="other__container" (click)="toggleOther()">
+                <a>Other stuff</a>
                 <ul class="other__list" *ngIf="showOther">
                     <li class="test1"><a>test1</a></li>
                     <li class="test2"><a>test2</a></li>
                     <li class="test3"><a>test3</a></li>
                 </ul>
-            </div>
-        </div>
+            </li>
+        </ol>
         <router-outlet name="projectBox" class="projectBox"></router-outlet>
         
     </div>

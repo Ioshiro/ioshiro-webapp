@@ -1,5 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ColoredPixel } from '../colored-pixel';
+import { Subscription } from 'rxjs';
+import { UiService } from 'src/app/services/ui/ui.service';
 
 @Component({
   selector: 'app-algorithm-view',
@@ -14,18 +16,25 @@ export class AlgorithmViewComponent implements OnInit, OnDestroy {
   static workArray : Array<number>;
   static gradientArray: Array<string>;
   static len : number;
+ sub1 : Subscription;
+ algorithmName : string;
   
-  constructor() { }
+  constructor(public ui: UiService) {
+  }
 
   ngOnInit() {
     AlgorithmViewComponent.activeArray = [];
     AlgorithmViewComponent.pixelsArray = [];
     AlgorithmViewComponent.workArray = [];
     AlgorithmViewComponent.gradientArray = [];
+    this.sub1 = this.ui.algorithmName.subscribe((value) => {
+      this.algorithmName = value;
+    });
   }
 
   ngOnDestroy() {
     AlgorithmViewComponent.flushArray();
+    this.sub1.unsubscribe();
   } 
 
   static flushArray(){
@@ -74,6 +83,10 @@ export class AlgorithmViewComponent implements OnInit, OnDestroy {
     document.getElementById('dynamicArray').appendChild(newElement);
   }
 
+
+  // @TODO
+  // better implementation of dynamic graphic/visual sorting
+  // with less cycles
   static setOrderByValue(i: number, v: number){
     for(let j in this.pixelsArray){
       let element = document.getElementById(j.toString());
@@ -82,7 +95,6 @@ export class AlgorithmViewComponent implements OnInit, OnDestroy {
       }
     }
   }
-
   static getValues(arr: Array<ColoredPixel>){
     let text: string;
     for(let x in arr){

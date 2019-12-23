@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy} from '@angular/core';
-import { ColoredPixel } from '../colored-pixel';
 import { AlgorithmViewComponent } from '../algorithm-view/algorithm-view.component';
+import { UiService } from 'src/app/services/ui/ui.service';
 
 @Component({
   selector: 'projects-merge-sort',
@@ -10,18 +10,16 @@ import { AlgorithmViewComponent } from '../algorithm-view/algorithm-view.compone
 
 export class MergeSortComponent implements OnInit, OnDestroy {
   activeArray : Array<number>;
-  activeLength : number;
-  pixelsArray: Array<ColoredPixel>;
-  workArray : Array<number>;
-  gradientArray: Array<string>;
   len : number;
-  constructor() { }
+  algorithmName = "Merge Sort";
+
+  constructor(public ui: UiService) { }
 
   ngOnInit() {
+    this.ui.algorithmName.next(this.algorithmName);
   }
 
   ngOnDestroy() {
-   // AlgorithmViewComponent.flushArray();
   }
   
   mergeSort(n: number){

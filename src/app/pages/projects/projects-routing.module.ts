@@ -9,8 +9,8 @@ import { CountingSortComponent } from './counting-sort/counting-sort.component';
 
 
 export const ProjectRoutes: Routes = [
-  {path: 'merge-sort', component: MergeSortComponent, outlet: "projectBox"},
   {path: 'app-algortihm-view', component: AlgorithmViewComponent},
+  {path: 'merge-sort', component: MergeSortComponent, outlet: "projectBox"},
   {path: 'selection-sort', component: SelectionSortComponent, outlet: "projectBox"},
   {path: 'insertion-sort', component: InsertionSortComponent, outlet: "projectBox"},
   {path: 'counting-sort', component: CountingSortComponent, outlet: "projectBox"}

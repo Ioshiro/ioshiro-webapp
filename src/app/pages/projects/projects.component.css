@@ -11,36 +11,40 @@ div{
 }
 
 .projects__list{
+    list-style-type: upper-roman;
     display: flex;
     flex-flow: column;
+    height: 100%;
     width: 30vw;
-    box-shadow: 0 0.5rem 2rem #63535D;
+    margin: 0; padding: 0;
+    box-shadow: 1rem 0 2rem -1.5rem #63535D;
+}
+
+ol{
+    list-style-type: upper-roman;
 }
 .algorithms__container{
     display: flex;
     flex-flow: column;
-    margin-left: 3rem;
-    box-shadow: 0 0.5rem 2rem #63535D;
+    margin-left: 1.5rem;
+
 }
 
 .algorithms__list{
     display: flex;
     flex-flow: column;
-    margin-left: 3rem;
 }
 
 .other__container{
     display: flex;
     flex-flow: column;
-    margin-left: 3rem;
-    margin-top: 1.5rem;
-    box-shadow: 0 0.5rem 2rem #63535D;
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
 }
 
 .other__list{
     display: flex;
     flex-flow: column;
-    margin-left: 3rem;
 }
 
 .select__text{
@@ -52,6 +56,7 @@ ul{
 }
 
 li{
+    display: list-item;
     border-bottom: 1px solid #96858F;
 }
 

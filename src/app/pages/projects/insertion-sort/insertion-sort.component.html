@@ -1,8 +1,10 @@
 <div class="insertion-sort__container">
     <app-algorithm-view></app-algorithm-view>
     <div class="button__container">
-        <input type="number" [(ngModel)]="len">
-        <input type="button" value="Create random array" (click)="createArray(len)">
-        <input type="button" value="Order array" (click)="insertionSort(len)">
+            <mat-form-field>
+                    <input matInput type="number" placeholder="Array length" [(ngModel)]="len" class="length__input">
+                    <button  mat-raised-button color="basic" (click)="createArray(len)">Generate random array</button>       
+                    <button mat-raised-button color="primary" (click)="insertionSort(len)">Order array</button>
+            </mat-form-field>
     </div>
 </div>

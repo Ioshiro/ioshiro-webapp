@@ -9,6 +9,7 @@ import { ComponentTestComponent } from './pages/component-test/component-test.co
 import { CvComponent } from './pages/cv/cv.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { GeneralInfoComponent } from './ui/cv/general-info/general-info.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -17,13 +18,14 @@ import { GeneralInfoComponent } from './ui/cv/general-info/general-info.componen
     ComponentTestComponent,
     CvComponent,
     ProjectsComponent,
-    GeneralInfoComponent,
+    GeneralInfoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

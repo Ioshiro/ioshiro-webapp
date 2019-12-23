@@ -2,13 +2,16 @@
     display: flex;
     flex-flow: column;
     justify-items: center;
-    box-shadow: 0 0.5rem 2rem #63535D;
+    height: 100%;
 }
 
 .button__container{
-    height: 10vh;
+    height: 9vh;
     display: flex;
     flex-flow: row;
     justify-content: space-evenly;
-    box-shadow: 0 0.5rem 2rem #63535D;
+}
+
+.length__input{
+    max-width: 50%;
 }

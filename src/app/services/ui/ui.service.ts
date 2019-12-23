@@ -6,12 +6,14 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class UiService {
   title: BehaviorSubject<string>;
+  algorithmName: BehaviorSubject<string>;
   darkModeState: BehaviorSubject<boolean>;
   circleActiveNumber: BehaviorSubject<number>;
   dynamicArray: BehaviorSubject<Array<number>>;
 
   constructor() { 
     this.title = new BehaviorSubject<string>("blank");
+    this.algorithmName = new BehaviorSubject<string>("blank");
     this.darkModeState = new BehaviorSubject<boolean>(false);
     this.circleActiveNumber = new BehaviorSubject<number>(0);
     this.dynamicArray = new BehaviorSubject<Array<number>>([]);

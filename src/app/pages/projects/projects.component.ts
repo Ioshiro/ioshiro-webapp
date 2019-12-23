@@ -17,5 +17,16 @@ export class ProjectsComponent implements OnInit {
     this.ui.title.next(this.title);
   }
 
+  toggleAlgorithms(){
+    this.showAlgorithms = !this.showAlgorithms;
+    if(this.showOther)
+      this.showOther = false;
+  }
+
+  toggleOther(){
+    this.showOther = !this.showOther;
+    if(this.showAlgorithms)
+      this.showAlgorithms = false;
+  }
 
 }

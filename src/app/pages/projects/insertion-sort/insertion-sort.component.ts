@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlgorithmViewComponent } from '../algorithm-view/algorithm-view.component';
+import { UiService } from 'src/app/services/ui/ui.service';
 
 @Component({
   selector: 'projects-insertion-sort',
@@ -8,10 +9,13 @@ import { AlgorithmViewComponent } from '../algorithm-view/algorithm-view.compone
 })
 export class InsertionSortComponent implements OnInit {
   activeArray : Array<number>;
+  len : number;
+  algorithmName = "Insertion Sort";
 
-  constructor() { }
+  constructor(public ui: UiService) { }
 
   ngOnInit() {
+    this.ui.algorithmName.next(this.algorithmName);
   }
 
   insertionSort(n: number){
