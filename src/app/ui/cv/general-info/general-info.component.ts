@@ -26,6 +26,7 @@ import { Subscription } from 'rxjs';
 export class GeneralInfoComponent implements OnInit {
   showGeneral = false;
   circleActive : number;
+  isCircleActive : boolean[] = [false, false, false, false];
   sub1 : Subscription;
   constructor(public cv: CvComponent, public ui: UiService) { 
 
@@ -35,9 +36,38 @@ export class GeneralInfoComponent implements OnInit {
     this.showGeneral= !this.showGeneral;
   }
   ngOnInit() {
-    this.showGeneral = this.cv.showGeneral;
+    //this.cv.showGeneral = !this.cv.showGeneral;
+
     this.sub1 = this.ui.circleActiveNumber.subscribe((value) => {
-      this.circleActive = value;
+      switch(value){
+        case 0:
+          this.isCircleActive[0] = false;
+          this.isCircleActive[1] = false;
+          this.isCircleActive[2] = false;
+          this.isCircleActive[3] = false;
+          console.log("i saw "+value);
+          break;
+        case 1:
+          this.isCircleActive[0] = true;
+          console.log("i saw "+value);
+          break;
+        case 2:
+          this.isCircleActive[1] = true;
+          console.log("i saw "+value);
+          break;
+        case 3:
+          this.isCircleActive[2] = true;
+          console.log("i saw "+value);
+          break;
+        case 4:
+          this.isCircleActive[3] = true;
+          console.log("i saw "+value);
+          break;
+        default:
+          console.log("something went wrong.");
+          break;
+      }
+
     });
   }
 

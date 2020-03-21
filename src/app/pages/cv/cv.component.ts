@@ -25,13 +25,9 @@ import { Subscription } from 'rxjs';
 export class CvComponent implements OnInit {
   title = "About Me";
   darkModeActive : boolean;
-  showGeneral = false;
-  showSchool = false;
-  showGames = false;
-  circle1Active = false;
-  circle2Active = false;
-  circle3Active = false;
-  circle4Active = false;
+  showGeneral : boolean = false;
+  showSchool : boolean = false;
+  showGames : boolean = false;
   sub1: Subscription;
   sub2: Subscription;
 
@@ -66,43 +62,12 @@ export class CvComponent implements OnInit {
     
    }
 
-  ngOnInit() {
+   ngOnInit(){
     this.ui.title.next(this.title);
     this.sub1 = this.ui.darkModeState.subscribe((value) => {
       this.darkModeActive = value;
-    });
-    this.sub2 = this.ui.circleActiveNumber.subscribe((value) => {
-      switch(value){
-        case 0:
-          this.circle1Active = false;
-          this.circle2Active = false;
-          this.circle3Active = false;
-          this.circle4Active = false;
-          console.log("i saw "+value);
-          break;
-        case 1:
-          this.circle1Active = true;
-          console.log("i saw "+value);
-          break;
-        case 2:
-          this.circle2Active = true;
-          console.log("i saw "+value);
-          break;
-        case 3:
-          this.circle3Active = true;
-          console.log("i saw "+value);
-          break;
-        case 4:
-          this.circle4Active = true;
-          console.log("i saw "+value);
-          break;
-        default:
-          console.log("something went wrong.");
-          break;
-      }
-
-    });
-  }
+    }); 
+   }
 
   ngOnDestroy(): void {
     this.sub1.unsubscribe();
