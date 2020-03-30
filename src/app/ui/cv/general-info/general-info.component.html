@@ -467,37 +467,56 @@
     </div>
     <div class="circles-svg__container">
         <svg width="64" height="64">
-            <circle class="circle__svg" cx="32" cy="32" r="28" stroke="black" stroke-width="4" fill="#D5D5D5"  (mouseover)="this.ui.circleActiveNumber.next(1)" (mouseout)="this.ui.circleActiveNumber.next(0)"/>
+            <circle class="circle__svg" [ngClass]="{'circle__svg-dark': darkModeActive}" cx="32" cy="32" r="28" stroke="black" stroke-width="4" fill="#D5D5D5"  (mouseover)="this.ui.circleActiveNumber.next(1)" (mouseout)="this.ui.circleActiveNumber.next(0)"/>
         </svg>
 
         
-        <svg width="164" height="22" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <svg width="164" height="22" version="1.1" xmlns="http://www.w3.org/2000/svg" [ngClass]="{'dash-line__svg-dark': darkModeActive}">
             <line stroke-dasharray="10, 5" x1="0" y1="10" x2="350" y2="10" style="stroke-width: 6px;"></line>
         </svg>
     
         <svg width="64" height="64">
-            <circle class="circle__svg" cx="32" cy="32" r="28" stroke="black" stroke-width="4" fill="#D5D5D5" (mouseover)="this.ui.circleActiveNumber.next(2)" (mouseout)="this.ui.circleActiveNumber.next(0)"/>
+            <circle class="circle__svg" [ngClass]="{'circle__svg-dark': darkModeActive}" cx="32" cy="32" r="28" stroke="black" stroke-width="4" fill="#D5D5D5" (mouseover)="this.ui.circleActiveNumber.next(2)" (mouseout)="this.ui.circleActiveNumber.next(0)"/>
         </svg>
 
     
-        <svg width="164" height="22" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <svg width="164" height="22" version="1.1" xmlns="http://www.w3.org/2000/svg" [ngClass]="{'dash-line__svg-dark': darkModeActive}">
             <line stroke-dasharray="10, 5" x1="0" y1="10" x2="350" y2="10" style="stroke-width: 6px;"></line>
         </svg>
     
 
         <svg width="64" height="64">
-            <circle class="circle__svg" cx="32" cy="32" r="28" stroke="black" stroke-width="4" fill="#D5D5D5" (mouseover)="this.ui.circleActiveNumber.next(3)" (mouseout)="this.ui.circleActiveNumber.next(0)"/>
+            <circle class="circle__svg"  [ngClass]="{'circle__svg-dark': darkModeActive}" cx="32" cy="32" r="28" stroke="black" stroke-width="4" fill="#D5D5D5" (mouseover)="this.ui.circleActiveNumber.next(3)" (mouseout)="this.ui.circleActiveNumber.next(0)"/>
         </svg>
-
-    
-                <svg width="164" height="22" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                    <line stroke-dasharray="10, 5" x1="0" y1="10" x2="350" y2="10" style="stroke-width: 6px;"></line>
-                </svg>
-            
-
+            <svg width="164" height="22" version="1.1" xmlns="http://www.w3.org/2000/svg" [ngClass]="{'dash-line__svg-dark': darkModeActive}">
+                <line stroke-dasharray="10, 5" x1="0" y1="10" x2="350" y2="10" style="stroke-width: 6px;"></line>
+            </svg>
         <svg width="64" height="64">
-            <circle class="circle__svg" cx="32" cy="32" r="28" stroke="black" stroke-width="4" fill="#D5D5D5" (mouseover)="this.ui.circleActiveNumber.next(4)" (mouseout)="this.ui.circleActiveNumber.next(0)"/>
+            <circle class="circle__svg" [ngClass]="{'circle__svg-dark': darkModeActive}"cx="32" cy="32" r="28" stroke="black" stroke-width="4" fill="#D5D5D5" (mouseover)="this.ui.circleActiveNumber.next(4)" (mouseout)="this.ui.circleActiveNumber.next(0)"/>
         </svg>
+    </div>
+
+    <div class="general-info-text__container">
+        <span class="general-info__text" *ngIf="isCircleActive[0]" [@enterAnimation]="isCircleActive[0] ? 'enter' : 'leave'">
+            <span class="age__text">Age:</span> <span class="age-desc__text">0-11</span> 
+            <span class="place__text">Place:</span> <span class="place-desc__text">Moscow, RU</span> 
+            <span class="activities__text">Activities:</span> <span class="activities-desc__text"> Chess, Swimming, Lego Master</span>
+        </span>
+        <span class="general-info__text" *ngIf="isCircleActive[1]" [@enterAnimation]="isCircleActive[1] ? 'enter' : 'leave'">
+            <span class="age__text">Age:</span> <span class="age-desc__text">11-15</span> 
+            <span class="place__text">Place:</span> <span class="place-desc__text">Sappada(BL), IT</span>
+            <span class="activities__text">Activities:</span> <span class="activities-desc__text">Parkour, Snowboarding, Soccer, Gaming, Hosting(MMORPG), Strolling</span>
+        </span>
+        <span class="general-info__text" *ngIf="isCircleActive[2]" [@enterAnimation]="isCircleActive[2] ? 'enter' : 'leave'">
+            <span class="age__text">Age:</span> <span class="age-desc__text">15-21</span> 
+            <span class="place__text">Place:</span> <span class="place-desc__text">Pordenone(PN), IT</span>
+            <span class="activities__text">Activities:</span> <span class="activities-desc__text">Guitar, Event Organizing, Gaming, Traveling, Early Coding, Student&Politcs Activism</span>
+        </span>
+        <span class="general-info__text" *ngIf="isCircleActive[3]" [@enterAnimation]="isCircleActive[3] ? 'enter' : 'leave'">
+            <span class="age__text">Age:</span> <span class="age-desc__text">21-2X</span> 
+            <span class="place__text">Place:</span> <span class="place-desc__text">Trento(TN), IT</span>
+            <span class="activities__text">Activities:</span> <span class="activities-desc__text">Software Engineering, Game Development, Political Activism, Guitar, Strolling, Game Coaching, PC supporting</span> 
+        </span>
     </div>
 </div>
 

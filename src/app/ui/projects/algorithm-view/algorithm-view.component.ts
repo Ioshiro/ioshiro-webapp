@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ColoredPixel } from '../colored-pixel';
+import { ColoredPixel } from '../../../services/projects/colored-pixel/colored-pixel';
 import { Subscription } from 'rxjs';
 import { UiService } from 'src/app/services/ui/ui.service';
 
@@ -16,8 +16,8 @@ export class AlgorithmViewComponent implements OnInit, OnDestroy {
   static workArray : Array<number>;
   static gradientArray: Array<string>;
   static len : number;
- sub1 : Subscription;
- algorithmName : string;
+  sub1 : Subscription;
+  algorithmName : string;
   
   constructor(public ui: UiService) {
   }

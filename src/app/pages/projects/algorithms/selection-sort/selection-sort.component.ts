@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ColoredPixel } from '../colored-pixel';
-import { AlgorithmViewComponent } from '../algorithm-view/algorithm-view.component';
+import { ColoredPixel } from '../../../../services/projects/colored-pixel/colored-pixel';
+import { AlgorithmViewComponent } from '../../../../ui/projects/algorithm-view/algorithm-view.component';
 import { UiService } from 'src/app/services/ui/ui.service';
 
 @Component({

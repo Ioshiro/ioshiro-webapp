@@ -24,8 +24,54 @@
     align-items: center;
     flex: auto;
     z-index: 10;
+    margin-top: 2rem;
 }
 
+.general-info-text__container{
+    margin-top: 4rem;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
+}
+
+.general-info__text{
+    display: grid;
+    grid-template-columns: auto 1fr 1fr auto;
+    grid-template-rows: auto 1fr 1fr 1fr auto;
+    box-shadow: 0 0.5rem 2rem #63535D;
+    min-width: 80%;
+    max-width: 80%;
+}
+
+.age__text{
+    font-weight: bold;
+    grid-column: 2;
+    grid-row: 2;
+}
+.age-desc__text{
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.place__text{
+    font-weight: bold;
+    grid-column: 2 ;
+    grid-row: 3;    
+}
+.place-desc__text{
+    grid-column: 3 ;
+    grid-row: 3 ;
+}
+.activities__text{
+    font-weight: bold;
+    grid-column: 2 ;
+    grid-row: 4 ;
+}
+.activities-desc__text{
+    grid-column: 3 ;
+    grid-row: 4 ;
+}
 /*
 *
 *  SVGS
@@ -36,14 +82,14 @@
 .italy-map__svg{ 
     height: 100%;
     width: 50%;
-    max-height: inherit;
+    max-height: 10rem;
     box-shadow: 0 0.5rem 2rem rgba(0, 0, 255, 0.2);
     z-index: 0;
 }
 
 .italy-map__svg *{
     max-width: 100%;
-    max-height: inherit;
+    max-height: 10rem;
 }
 
 #IT-34{
@@ -72,10 +118,10 @@
 
 
 .russia-map__svg{
-    height: 100%;
+    height: 10rem;
     width: 50%;
     max-width: 100%;
-    max-height: inherit;
+    max-height: 10rem;
     display: block;
     box-shadow: 0 0.5rem 2rem rgba(0, 0, 255, 0.2);
  
@@ -102,6 +148,19 @@
 
 .circle__svg:hover{
     fill: black;
+}
+
+.circle__svg-dark{
+    fill: black;
+    stroke: #D5D5D5;
+}
+
+.circle__svg-dark:hover{
+    fill: #D5D5D5;
+}
+
+.dash-line__svg-dark{
+    fill: #D5D5D5;
 }
 
 line {stroke:rgb(0, 0, 0); stroke-width: 2}

@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MergeSortComponent } from "./merge-sort/merge-sort.component";
-import { AlgorithmViewComponent } from './algorithm-view/algorithm-view.component';
-import { SelectionSortComponent } from './selection-sort/selection-sort.component';
-import { InsertionSortComponent } from './insertion-sort/insertion-sort.component';
-import { CountingSortComponent } from './counting-sort/counting-sort.component';
+import { MergeSortComponent } from "./algorithms/merge-sort/merge-sort.component";
+import { AlgorithmViewComponent } from '../../ui/projects/algorithm-view/algorithm-view.component';
+import { SelectionSortComponent } from './algorithms/selection-sort/selection-sort.component';
+import { InsertionSortComponent } from './algorithms/insertion-sort/insertion-sort.component';
+import { CountingSortComponent } from './algorithms/counting-sort/counting-sort.component';
 
 
 

@@ -25,9 +25,11 @@ import { Subscription } from 'rxjs';
 })
 export class GeneralInfoComponent implements OnInit {
   showGeneral = false;
+  darkModeActive : boolean;
   circleActive : number;
   isCircleActive : boolean[] = [false, false, false, false];
   sub1 : Subscription;
+  sub2 : Subscription;
   constructor(public cv: CvComponent, public ui: UiService) { 
 
   }
@@ -37,7 +39,9 @@ export class GeneralInfoComponent implements OnInit {
   }
   ngOnInit() {
     //this.cv.showGeneral = !this.cv.showGeneral;
-
+    this.sub2 = this.ui.darkModeState.subscribe((value) => {
+      this.darkModeActive = value;
+    }); 
     this.sub1 = this.ui.circleActiveNumber.subscribe((value) => {
       switch(value){
         case 0:
